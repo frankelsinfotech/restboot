@@ -17,7 +17,14 @@ public class UserController
 		else
 			return false;
 	}
-	
+	@PostMapping("/logout")
+	public boolean logout(@RequestParam("uname")String userName, @RequestParam("pwd")String password)
+	{
+		if(userName.equals("pankaj") && password.equals("cdac"))
+			return true;
+		else
+			return false;
+	}
 	@GetMapping("/authenticateGet")
 	public boolean authenticateUserGet(@RequestParam("uname")String userName, @RequestParam("pwd")String password)
 	{
